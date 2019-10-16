@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!--Fav icon -->
+    {% load static %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'logo.jpg' %}" />
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+    <!-- <script>src = 'https://code.jquery.com/jquery-3.4.1.min.js'</script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Bahut bhasad h bhai !</title>
+    <style>
+        .quantity::-webkit-inner-spin-button,
+        .quantity::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .bs-example {
+            margin: 20px;
+        }
+
+        #snackbar {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: rgb(106, 170, 106);
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+        }
+
+        #errorbar,
+        #searchbar {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: rgb(156, 99, 99);
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+        }
+
+        #snackbar.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        #snackbar.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        })
+        function setLabel(name) {
+            if (document.getElementById("details").style.display != 'none') {
+                document.getElementById("details").style.display = 'none'
+                document.getElementById("view_btn").innerText = 'View Details';
+            } else {
+
+            }
+            document.getElementById("collapseExample").style.display = "none";
+            document.getElementById("user-name").innerText = name;
+            document.getElementById("user").setAttribute('value', name);
+            document.getElementById("collapseExample").style.display = "block";
+            document.getElementById("user-name").style.width = "35%";
+            document.getElementById("user-name").style.textAlign = "center";
+            document.getElementById("collapseExample").style.width = "35%";
+            // document.getElementById("date").valueAsDate = new Date();
+        }
+        function showDetails() {
+            if (document.getElementById("details").style.display != 'block') {
+                document.getElementById("details").style.display = 'block';
+                document.getElementById("search").reset();
+                $("input[id$='fromDate'], input[id$='toDate']").datepicker("option", "maxDate", null);
+                $("input[id$='fromDate'], input[id$='toDate']").datepicker("option", "minDate", null);
+                document.getElementById("view_btn").innerText = 'Hide Details';
+                document.getElementById("collapseExample").style.display = 'none';
+                // document.getElementById("fromDate").valueAsDate = new Date();
+                // document.getElementById("toDate").valueAsDate = new Date();                
+            } else {
+                document.getElementById("details").style.display = 'none'
+                document.getElementById("view_btn").innerText = 'View Details';
+                document.getElementById("search_results").innerHTML = '';
+
+            }
+        }
+
+    </script>
+
+    {% block script %}
+    {% endblock %}
+
+
+</head>
+
+<body>
+    <!-- Image and text -->
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            {% load static %}
+            <img src="{% static 'logo.jpg' %}" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+            <!-- <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30"
+                class="d-inline-block align-top" alt=""> -->
+            Most expensive for expenses!
+        </a>
+        <button id="view_btn" class="btn btn-outline-warning my-2 my-sm-0" type="submit" onclick="showDetails()">View
+            Details</button>
+    </nav>
+
+
+    <!--Creating grid type layout-->
+    <h4>Choose today's contributor . . .</h4>
+    <p>
+        <a class="btn btn-simple" role="button" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="Aman Johri">
+            {% load static %}
+            <img src="{% static 'aman.jpg' %}" alt="aman" width="195" height="195" class="rounded-circle"
+                onclick="setLabel('Aman Johri')" >
+        </a>
+        <a class="btn btn-simple" role="button" aria-expanded="false">
+            {% load static %}
+            <img src="{% static 'anand.jpg' %}" alt="anand" width="195" height="195" class="rounded-circle"
+                onclick="setLabel('Anand Chauhan')" data-toggle="tooltip" data-placement="bottom" title="Anand Chauhan">
+        </a>
+        <a class="btn btn-simple" role="button" aria-expanded="false">
+            {% load static %}
+            <img src="{% static 'anil.jpg' %}" alt="anil" width="195" height="195" class="rounded-circle"
+                onclick="setLabel('Anil Kumar Sahu')" data-toggle="tooltip" data-placement="bottom"
+                title="Anil Kumar Sahu">
+        </a>
+        <a class="btn btn-simple" role="button" aria-expanded="false">
+            {% load static %}
+            <img src="{% static 'prashant.jpg' %}" alt="prashant" width="195" height="195" class="rounded-circle"
+                onclick="setLabel('Prashant Jain')" data-toggle="tooltip" data-placement="bottom" title="Prashant Jain">
+        </a>
+        <a class="btn btn-simple" role="button" aria-expanded="false">
+            {% load static %}
+            <img src="{% static 'rahul.jpg' %}" alt="rahul" width="195" height="195" class="rounded-circle"
+                onclick="setLabel('Rahul Chakraborty')" data-toggle="tooltip" data-placement="bottom"
+                title="Rahul Chakraborty">
+        </a>
+        <a class="btn btn-simple" role="button" aria-expanded="false">
+            {% load static %}
+            <img src="{% static 'sharad.jpg' %}" alt="sharad" width="195" height="195" class="rounded-circle"
+                onclick="setLabel('Sharad Joshi')" data-toggle="tooltip" data-placement="bottom" title="Sharad Joshi">
+        </a>
+    </p>
+
+
+
+    {% block container %}
+
+    {% endblock %}
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+{% if query.count > 0 %}
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-warning mx-3 mb-3" data-toggle="modal" data-target="#exampleModal" onclick="Calculate()">
+    Show Delta Details
+</button>
+
+<table class="table table-sm table-striped" id="details">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Kinne Ditta</th>
+            <th scope="col">Kinna Ditta</th>
+            <th scope="col">Kab Ditta</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for q in query %}
+        {% if q.user_name == 'Rahul Chakraborty' %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td><strong>{{q.user_name}}</strong></td>
+            <td><li style="list-style-type:none;" value='{{q.amount}}'  type=text class="rahul">&#x20B9; {{q.amount}}</li></td>
+            <td>{{q.date_deposite}}</td>
+        </tr>
+        {% elif q.user_name == 'Aman Johri' %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td><strong>{{q.user_name}}</strong></td>
+            <td><li style="list-style-type:none;" value='{{q.amount}}'  type=text class="aman">&#x20B9; {{q.amount}}</li></td>
+            <td>{{q.date_deposite}}</td>
+        </tr>
+        {% elif q.user_name == 'Prashant Jain' %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td><strong>{{q.user_name}}</strong></td>
+            <td><li style="list-style-type:none;" value='{{q.amount}}'  type=text class="prashant">&#x20B9; {{q.amount}}</li></td>
+            <td>{{q.date_deposite}}</td>
+        </tr>
+        {% elif q.user_name == 'Sharad Joshi' %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td><strong>{{q.user_name}}</strong></td>
+            <td><li style="list-style-type:none;" value='{{q.amount}}'  type=text class="sharad">&#x20B9; {{q.amount}}</li></td>
+            <td>{{q.date_deposite}}</td>
+        </tr>
+        {% elif q.user_name == 'Anil Kumar Sahu' %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td><strong>{{q.user_name}}</strong></td>
+            <td><li style="list-style-type:none;" value='{{q.amount}}'  type=text class="anil">&#x20B9; {{q.amount}}</li></td>
+            <td>{{q.date_deposite}}</td>
+        </tr>
+        {% elif q.user_name == 'Anand Chauhan' %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td><strong>{{q.user_name}}</strong></td>
+            <td><li style="list-style-type:none;" value='{{q.amount}}'  type=text class="anand">&#x20B9; {{q.amount}}</li></td>
+            <td>{{q.date_deposite}}</td>
+        </tr>
+        {% else %}
+        {% endif %}
+        {% endfor %}
+
+    </tbody>
+</table>
+
+{% else %}
+<div class="jumbotron jumbotron-fluid" style="background-color:transparent !important;">
+    <div class="container">
+        <h5 class="display-4">OOPS . . .</h5>
+        <p class="lead">No records found please try different search criteria.</p>
+    </div>
+</div>
+{% endif%}
