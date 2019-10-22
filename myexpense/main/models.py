@@ -7,4 +7,4 @@ class Detail(models.Model):
     date_deposite = models.DateField()
 
     def __str__(self):
-        return self.user_name
+        return self.user_name + "----------" + str(self.amount) + "----------" + str(self.date_deposite)
