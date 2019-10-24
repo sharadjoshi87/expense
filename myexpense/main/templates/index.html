@@ -25,7 +25,7 @@
     var sharad_delta = 0;
 
     for (var i = 0; i < items.length; i++)
-      sum += parseInt(items[i].innerText.substring(2,));
+      sum += parseInt(items[i].innerText.substring(2));
 
     console.log(sum);
 
@@ -87,7 +87,7 @@
     contri.innerHTML = '&#x20B9; ' + sharad_delta;
   }
 
-  $(function(){
+  $(function () {
     $("#addDate").datepicker({
       showAnim: 'slideDown',
       maxDate: 0,
@@ -208,8 +208,13 @@
 </script>
 {%endblock%}
 
-{% block container %}
+{% block todaysTurn%}
+<button type="button" class="btn btn-light">Next?
+  <span class="badge badge-light">{{ name }}</span>
+</button>
+{% endblock %}
 
+{% block container %}
 <div class="collapse container mx-auto my-auto" id="collapseExample">
   <div class="input-group mb-3 ml-3 alert-warning ">
     <!-- <form action="add" method="POST" id="form"> -->
@@ -302,39 +307,39 @@
           <tbody>
             <tr>
               <th scope="row">1</th>
-              <td ><strong>Aman</strong></td>
-              <td  id="aman_cont"></td>
-              <td  id="aman_delta"></td>
+              <td><strong>Aman</strong></td>
+              <td id="aman_cont"></td>
+              <td id="aman_delta"></td>
             </tr>
             <tr>
               <th scope="row">2</th>
-              <td ><strong>Anand</strong></td>
-              <td  id="anand_cont"></td>
-              <td  id="anand_delta"></td>
+              <td><strong>Anand</strong></td>
+              <td id="anand_cont"></td>
+              <td id="anand_delta"></td>
             </tr>
             <tr>
               <th scope="row">3</th>
-              <td ><strong>Anil</strong></td>
-              <td  id="anil_cont"></td>
-              <td  id="anil_delta"></td>
+              <td><strong>Anil</strong></td>
+              <td id="anil_cont"></td>
+              <td id="anil_delta"></td>
             </tr>
             <tr>
               <th scope="row">4</th>
-              <td ><strong>Prashant</strong></td>
-              <td  id="prashant_cont"></td>
-              <td  id="prashant_delta"></td>
+              <td><strong>Prashant</strong></td>
+              <td id="prashant_cont"></td>
+              <td id="prashant_delta"></td>
             </tr>
             <tr>
               <th scope="row">5</th>
-              <td ><strong>Rahul</strong></td>
-              <td  id="rahul_cont"></td>
-              <td  id="rahul_delta"></td>
+              <td><strong>Rahul</strong></td>
+              <td id="rahul_cont"></td>
+              <td id="rahul_delta"></td>
             </tr>
             <tr>
               <th scope="row">6</th>
-              <td ><strong>Sharad</strong></td>
-              <td  id="sharad_cont"></td>
-              <td  id="sharad_delta"></td>
+              <td><strong>Sharad</strong></td>
+              <td id="sharad_cont"></td>
+              <td id="sharad_delta"></td>
             </tr>
           </tbody>
         </table>
