@@ -15,6 +15,13 @@
     var rahul_class = table.getElementsByClassName('rahul');
     var prashant_class = table.getElementsByClassName('prashant');
     var sharad_class = table.getElementsByClassName('sharad');
+    var aC2 = document.getElementById('anandCount');
+    var aC1 = document.getElementById('amanCount');
+    var aC3 = document.getElementById('anilCount');
+    var rC = document.getElementById('rahulCount');
+    var pC = document.getElementById('prashantCount');
+    var sC = document.getElementById('sharadCount');
+
 
     var sum = 0;
     var anand_delta = 0;
@@ -23,6 +30,13 @@
     var rahul_delta = 0;
     var prashant_delta = 0;
     var sharad_delta = 0;
+
+    var anandCount = anand_class.length
+    var amanCount = aman_class.length
+    var anilCount = anil_class.length
+    var rahulCount = rahul_class.length
+    var prashantCount = prashant_class.length
+    var sharadCount = sharad_class.length
 
     for (var i = 0; i < items.length; i++)
       sum += parseInt(items[i].innerText.substring(2));
@@ -85,6 +99,14 @@
     var contri = document.getElementById('sharad_cont');
     output.innerHTML = '&#x20B9; ' + (sum - sharad_delta);
     contri.innerHTML = '&#x20B9; ' + sharad_delta;
+
+    aC1.textContent = amanCount;
+    aC2.textContent = anandCount;
+    aC3.textContent = anilCount;
+    pC.textContent = prashantCount;
+    rC.textContent = rahulCount;
+    sC.textContent = sharadCount;
+
   }
 
   $(function () {
@@ -307,37 +329,37 @@
           <tbody>
             <tr>
               <th scope="row">1</th>
-              <td><strong>Aman</strong></td>
+              <td><span class="badge badge-warning mr-2" id="amanCount"></span><strong>Aman</strong></td>
               <td id="aman_cont"></td>
               <td id="aman_delta"></td>
             </tr>
             <tr>
               <th scope="row">2</th>
-              <td><strong>Anand</strong></td>
+              <td><span class="badge badge-warning mr-2" id="anandCount"></span><strong>Anand</strong></td>
               <td id="anand_cont"></td>
               <td id="anand_delta"></td>
             </tr>
             <tr>
               <th scope="row">3</th>
-              <td><strong>Anil</strong></td>
+              <td><span class="badge badge-warning mr-2" id="anilCount"></span><strong>Anil</strong></td>
               <td id="anil_cont"></td>
               <td id="anil_delta"></td>
             </tr>
             <tr>
               <th scope="row">4</th>
-              <td><strong>Prashant</strong></td>
+              <td><span class="badge badge-warning mr-2" id="prashantCount"></span><strong>Prashant</strong></td>
               <td id="prashant_cont"></td>
               <td id="prashant_delta"></td>
             </tr>
             <tr>
               <th scope="row">5</th>
-              <td><strong>Rahul</strong></td>
+              <td><span class="badge badge-warning mr-2" id="rahulCount"></span><strong>Rahul</strong></td>
               <td id="rahul_cont"></td>
               <td id="rahul_delta"></td>
             </tr>
             <tr>
               <th scope="row">6</th>
-              <td><strong>Sharad</strong></td>
+              <td><span class="badge badge-warning mr-2" id="sharadCount"></span><strong>Sharad</strong></td>
               <td id="sharad_cont"></td>
               <td id="sharad_delta"></td>
             </tr>
