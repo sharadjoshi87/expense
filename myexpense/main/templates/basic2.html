@@ -32,13 +32,43 @@
 
     <title>Bahut bhasad h bhai !</title>
     <style>
-        .contri{
+        .contri {
             color: rgb(17, 44, 104);
-            
+
         }
 
-        .delta{
+        .delta {
             color: brown;
+        }
+
+        .tr-head {
+            color: rebeccapurple;
+        }
+
+        .blinking {
+            animation: blinkingText 0.8s infinite;
+        }
+
+        @keyframes blinkingText {
+            0% {
+                color: #000;
+            }
+
+            49% {
+                color: transparent;
+            }
+
+            50% {
+                color: transparent;
+            }
+
+            99% {
+                color: transparent;
+            }
+
+            100% {
+                color: #000;
+            }
         }
 
         .quantity::-webkit-inner-spin-button,
@@ -211,10 +241,11 @@
     <!--Creating grid type layout-->
     <h4>Choose today's contributor . . .</h4>
     <p>
-        <a class="btn btn-simple" role="button" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="Aman Johri">
+        <a class="btn btn-simple" role="button" aria-expanded="false" data-toggle="tooltip" data-placement="bottom"
+            title="Aman Johri">
             {% load static %}
             <img src="{% static 'aman.jpg' %}" alt="aman" width="195" height="195" class="rounded-circle"
-                onclick="setLabel('Aman Johri')" >
+                onclick="setLabel('Aman Johri')">
         </a>
         <a class="btn btn-simple" role="button" aria-expanded="false">
             {% load static %}

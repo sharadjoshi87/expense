@@ -102,12 +102,12 @@
     output.innerHTML = '&#x20B9; ' + (max - sharad_delta);
     contri.innerHTML = '&#x20B9; ' + sharad_delta;
 
-    aC1.textContent = amanCount;
-    aC2.textContent = anandCount;
-    aC3.textContent = anilCount;
-    pC.textContent = prashantCount;
-    rC.textContent = rahulCount;
-    sC.textContent = sharadCount;
+    aC1.textContent = amanCount + 'x';
+    aC2.textContent = anandCount + 'x';
+    aC3.textContent = anilCount + 'x';
+    pC.textContent = prashantCount + 'x';
+    rC.textContent = rahulCount + 'x';
+    sC.textContent = sharadCount + 'x';
 
   }
 
@@ -321,7 +321,7 @@
         <!-- Modal body start -->
         <table class="table table-sm table-borderless table-striped">
           <thead>
-            <tr>
+            <tr class="tr-head">
               <th scope="col">#</th>
               <th scope="col">Name</th>
               <th scope="col">Contribution</th>
@@ -331,37 +331,37 @@
           <tbody>
             <tr>
               <th scope="row">1</th>
-              <td><span class="badge badge-warning mr-2" id="amanCount"></span><strong>Aman</strong></td>
+              <td><span class="badge badge-warning mr-2 blinking" id="amanCount"></span><strong>Aman</strong></td>
               <td id="aman_cont" class="contri"></td>
               <td id="aman_delta" class="delta"></td>
             </tr>
             <tr>
               <th scope="row">2</th>
-              <td><span class="badge badge-warning mr-2" id="anandCount"></span><strong>Anand</strong></td>
+              <td><span class="badge badge-warning mr-2 blinking" id="anandCount"></span><strong>Anand</strong></td>
               <td id="anand_cont" class="contri"></td>
               <td id="anand_delta" class="delta"></td>
             </tr>
             <tr>
               <th scope="row">3</th>
-              <td><span class="badge badge-warning mr-2" id="anilCount"></span><strong>Anil</strong></td>
+              <td><span class="badge badge-warning mr-2 blinking" id="anilCount"></span><strong>Anil</strong></td>
               <td id="anil_cont" class="contri"></td>
               <td id="anil_delta" class="delta"></td>
             </tr>
             <tr>
               <th scope="row">4</th>
-              <td><span class="badge badge-warning mr-2" id="prashantCount"></span><strong>Prashant</strong></td>
+              <td><span class="badge badge-warning mr-2 blinking" id="prashantCount"></span><strong>Prashant</strong></td>
               <td id="prashant_cont" class="contri"></td>
               <td id="prashant_delta" class="delta"></td>
             </tr>
             <tr>
               <th scope="row">5</th>
-              <td><span class="badge badge-warning mr-2" id="rahulCount"></span><strong>Rahul</strong></td>
+              <td><span class="badge badge-warning mr-2 blinking" id="rahulCount"></span><strong>Rahul</strong></td>
               <td id="rahul_cont" class="contri"></td>
               <td id="rahul_delta" class="delta"></td>
             </tr>
             <tr>
               <th scope="row">6</th>
-              <td><span class="badge badge-warning mr-2" id="sharadCount"></span><strong>Sharad</strong></td>
+              <td><span class="badge badge-warning mr-2 blinking" id="sharadCount"></span><strong>Sharad</strong></td>
               <td id="sharad_cont" class="contri"></td>
               <td id="sharad_delta" class="delta"></td>
             </tr>
