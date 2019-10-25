@@ -49,55 +49,57 @@
     for (var i = 0; i < anand_class.length; i++)
       anand_delta += parseInt(anand_class[i].value);
 
-    console.log('anand delta: ' + anand_delta);
-    var output = document.getElementById('anand_delta');
-    var contri = document.getElementById('anand_cont');
-    output.innerHTML = '&#x20B9; ' + (sum - anand_delta);
-    contri.innerHTML = '&#x20B9; ' + anand_delta;
-
     for (var i = 0; i < aman_class.length; i++)
       aman_delta += parseInt(aman_class[i].value);
-
-    console.log('aman delta: ' + aman_delta);
-    var output = document.getElementById('aman_delta');
-    var contri = document.getElementById('aman_cont');
-    output.innerHTML = '&#x20B9; ' + (sum - aman_delta);
-    contri.innerHTML = '&#x20B9; ' + aman_delta;
 
     for (var i = 0; i < anil_class.length; i++)
       anil_delta += parseInt(anil_class[i].value);
 
-    console.log('anil delta: ' + anil_delta);
-    var output = document.getElementById('anil_delta');
-    var contri = document.getElementById('anil_cont');
-    output.innerHTML = '&#x20B9; ' + (sum - anil_delta);
-    contri.innerHTML = '&#x20B9; ' + anil_delta;
-
     for (var i = 0; i < rahul_class.length; i++)
       rahul_delta += parseInt(rahul_class[i].value);
-
-    console.log('rahul delta: ' + rahul_delta);
-    var output = document.getElementById('rahul_delta');
-    var contri = document.getElementById('rahul_cont');
-    output.innerHTML = '&#x20B9; ' + (sum - rahul_delta);
-    contri.innerHTML = '&#x20B9; ' + rahul_delta;
 
     for (var i = 0; i < prashant_class.length; i++)
       prashant_delta += parseInt(prashant_class[i].value);
 
+    for (var i = 0; i < sharad_class.length; i++)
+      sharad_delta += parseInt(sharad_class[i].value);
+
+    var max = Math.max(aman_delta, anand_delta, anil_delta, prashant_delta, rahul_delta, sharad_delta)
+
+    console.log('anand delta: ' + anand_delta);
+    var output = document.getElementById('anand_delta');
+    var contri = document.getElementById('anand_cont');
+    output.innerHTML = '&#x20B9; ' + (max - anand_delta);
+    contri.innerHTML = '&#x20B9; ' + anand_delta;
+
+    console.log('aman delta: ' + aman_delta);
+    var output = document.getElementById('aman_delta');
+    var contri = document.getElementById('aman_cont');
+    output.innerHTML = '&#x20B9; ' + (max - aman_delta);
+    contri.innerHTML = '&#x20B9; ' + aman_delta;
+
+    console.log('anil delta: ' + anil_delta);
+    var output = document.getElementById('anil_delta');
+    var contri = document.getElementById('anil_cont');
+    output.innerHTML = '&#x20B9; ' + (max - anil_delta);
+    contri.innerHTML = '&#x20B9; ' + anil_delta;
+
+    console.log('rahul delta: ' + rahul_delta);
+    var output = document.getElementById('rahul_delta');
+    var contri = document.getElementById('rahul_cont');
+    output.innerHTML = '&#x20B9; ' + (max - rahul_delta);
+    contri.innerHTML = '&#x20B9; ' + rahul_delta;
+
     console.log('prashant delta: ' + prashant_delta);
     var output = document.getElementById('prashant_delta');
     var contri = document.getElementById('prashant_cont');
-    output.innerHTML = '&#x20B9; ' + (sum - prashant_delta);
+    output.innerHTML = '&#x20B9; ' + (max - prashant_delta);
     contri.innerHTML = '&#x20B9; ' + prashant_delta;
-
-    for (var i = 0; i < sharad_class.length; i++)
-      sharad_delta += parseInt(sharad_class[i].value);
 
     console.log('sharad delta: ' + sharad_delta);
     var output = document.getElementById('sharad_delta');
     var contri = document.getElementById('sharad_cont');
-    output.innerHTML = '&#x20B9; ' + (sum - sharad_delta);
+    output.innerHTML = '&#x20B9; ' + (max - sharad_delta);
     contri.innerHTML = '&#x20B9; ' + sharad_delta;
 
     aC1.textContent = amanCount;
