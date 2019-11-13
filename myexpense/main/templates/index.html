@@ -4,232 +4,6 @@
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
-<script type="text/javascript">
-  function Calculate() {
-    console.log('in calculate');
-    var table = document.getElementById('details');
-    var items = table.getElementsByTagName('li');
-    var anand_class = table.getElementsByClassName('anand');
-    var aman_class = table.getElementsByClassName('aman');
-    var anil_class = table.getElementsByClassName('anil');
-    var rahul_class = table.getElementsByClassName('rahul');
-    var prashant_class = table.getElementsByClassName('prashant');
-    var sharad_class = table.getElementsByClassName('sharad');
-    var aC2 = document.getElementById('anandCount');
-    var aC1 = document.getElementById('amanCount');
-    var aC3 = document.getElementById('anilCount');
-    var rC = document.getElementById('rahulCount');
-    var pC = document.getElementById('prashantCount');
-    var sC = document.getElementById('sharadCount');
-
-
-    var sum = 0;
-    var anand_delta = 0;
-    var aman_delta = 0;
-    var anil_delta = 0;
-    var rahul_delta = 0;
-    var prashant_delta = 0;
-    var sharad_delta = 0;
-
-    var anandCount = anand_class.length
-    var amanCount = aman_class.length
-    var anilCount = anil_class.length
-    var rahulCount = rahul_class.length
-    var prashantCount = prashant_class.length
-    var sharadCount = sharad_class.length
-
-    for (var i = 0; i < items.length; i++)
-      sum += parseInt(items[i].innerText.substring(2));
-
-    console.log(sum);
-
-    var output = document.getElementById('sum');
-    output.innerHTML = '<strong>Total Amount : &#x20B9; ' + sum + '</strong>';
-
-    for (var i = 0; i < anand_class.length; i++)
-      anand_delta += parseInt(anand_class[i].value);
-
-    for (var i = 0; i < aman_class.length; i++)
-      aman_delta += parseInt(aman_class[i].value);
-
-    for (var i = 0; i < anil_class.length; i++)
-      anil_delta += parseInt(anil_class[i].value);
-
-    for (var i = 0; i < rahul_class.length; i++)
-      rahul_delta += parseInt(rahul_class[i].value);
-
-    for (var i = 0; i < prashant_class.length; i++)
-      prashant_delta += parseInt(prashant_class[i].value);
-
-    for (var i = 0; i < sharad_class.length; i++)
-      sharad_delta += parseInt(sharad_class[i].value);
-
-    var max = Math.max(aman_delta, anand_delta, anil_delta, prashant_delta, rahul_delta, sharad_delta)
-
-    console.log('anand delta: ' + anand_delta);
-    var output = document.getElementById('anand_delta');
-    var contri = document.getElementById('anand_cont');
-    output.innerHTML = '<strong>&#x20B9; ' + (max - anand_delta) + '</strong>';
-    contri.innerHTML = '<strong>&#x20B9; ' + anand_delta + '</strong>';
-
-    console.log('aman delta: ' + aman_delta);
-    var output = document.getElementById('aman_delta');
-    var contri = document.getElementById('aman_cont');
-    output.innerHTML = '<strong>&#x20B9; ' + (max - aman_delta) + '</strong>';
-    contri.innerHTML = '<strong>&#x20B9; ' + aman_delta + '</strong>';
-
-    console.log('anil delta: ' + anil_delta);
-    var output = document.getElementById('anil_delta');
-    var contri = document.getElementById('anil_cont');
-    output.innerHTML = '<strong>&#x20B9; ' + (max - anil_delta) + '</strong>';
-    contri.innerHTML = '<strong>&#x20B9; ' + anil_delta + '</strong>';
-
-    console.log('rahul delta: ' + rahul_delta);
-    var output = document.getElementById('rahul_delta');
-    var contri = document.getElementById('rahul_cont');
-    output.innerHTML = '<strong>&#x20B9; ' + (max - rahul_delta) + '</strong>';
-    contri.innerHTML = '<strong>&#x20B9; ' + rahul_delta + '</strong>';
-
-    console.log('prashant delta: ' + prashant_delta);
-    var output = document.getElementById('prashant_delta');
-    var contri = document.getElementById('prashant_cont');
-    output.innerHTML = '<strong>&#x20B9; ' + (max - prashant_delta) + '</strong>';
-    contri.innerHTML = '<strong>&#x20B9; ' + prashant_delta + '</strong>';
-
-    console.log('sharad delta: ' + sharad_delta);
-    var output = document.getElementById('sharad_delta');
-    var contri = document.getElementById('sharad_cont');
-    output.innerHTML = '<strong>&#x20B9; ' + (max - sharad_delta) + '</strong>';
-    contri.innerHTML = '<strong>&#x20B9; ' + sharad_delta + '</strong>';
-
-    aC1.textContent = amanCount + 'x';
-    aC2.textContent = anandCount + 'x';
-    aC3.textContent = anilCount + 'x';
-    pC.textContent = prashantCount + 'x';
-    rC.textContent = rahulCount + 'x';
-    sC.textContent = sharadCount + 'x';
-
-  }
-
-  $(function () {
-    $("#addDate").datepicker({
-      showAnim: 'slideDown',
-      maxDate: 0,
-      numberOfMonth: 1,
-      dateFormat: 'yy-mm-dd',
-    });
-
-  });
-
-  $(function () {
-
-    $("#fromDate").datepicker({
-      showAnim: 'slideDown',
-      maxDate: 0,
-      numberOfMonth: 1,
-      dateFormat: 'yy-mm-dd',
-      onSelect: function (selectdate) {
-        var dt = new Date(selectdate);
-        dt.setDate(dt.getDate() + 1);
-        $("#toDate").datepicker("option", "minDate", dt);
-      }
-    });
-
-    $("#toDate").datepicker({
-      showAnim: 'slideDown',
-      maxDate: 0,
-      numberOfMonth: 1,
-      dateFormat: 'yy-mm-dd',
-      onSelect: function (selectdate) {
-        var dt = new Date(selectdate);
-        dt.setDate(dt.getDate() - 1);
-        $("#fromDate").datepicker("option", "maxDate", dt);
-      }
-    });
-  });
-
-  function onSuccess() {
-    var x = document.getElementById("snackbar");
-    x.className = "show";
-    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-    setTimeout(function () { location.reload(true); }, 1500);
-  }
-
-  function onError() {
-    var x = document.getElementById("errorbar");
-    x.className = "show";
-    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-  }
-
-  function onSearchError() {
-    var x = document.getElementById("searchbar");
-    x.className = "show";
-    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-  }
-
-  $(document).on('submit', '#search', function (e) {
-
-    e.preventDefault();
-
-    if (document.getElementById("fromDate").value != '' && document.getElementById("toDate").value != '') {
-      $.ajax({
-        type: 'POST',
-        url: '/search',
-        data: {
-          fromDate: $('#fromDate').val(),
-          toDate: $('#toDate').val(),
-          csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
-        },
-        success: function (data, textStatus, jqXHR) {
-          $('#search_results').html(data);
-        }
-      })
-
-    } else {
-      onSearchError();
-
-      if (document.getElementById("fromDate").value == '') {
-        document.getElementById("fromDate").style.borderColor = 'red';
-      }
-      if (document.getElementById("toDate").value == '') {
-        document.getElementById("toDate").style.borderColor = 'red';
-      }
-    }
-
-  });
-
-  $(document).on('submit', '#form', function (e) {
-
-    e.preventDefault();
-
-    if (document.getElementById("amt").value != '' && document.getElementById("addDate").value != '') {
-      $.ajax({
-        type: 'POST',
-        url: '/add',
-        data: {
-          user: $('#user').val(),
-          amount: $('#amt').val(),
-          date: $('#addDate').val(),
-          csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
-        },
-        success: function () {
-          onSuccess();
-        }
-      })
-
-    } else {
-      onError();
-
-      if (document.getElementById("amt").value == '') {
-        document.getElementById("amt").style.borderColor = 'red';
-      }
-      if (document.getElementById("date").value == '') {
-        document.getElementById("date").style.borderColor = 'red';
-      }
-    }
-
-  });
-</script>
 {%endblock%}
 
 {% block todaysTurn%}
@@ -331,43 +105,44 @@
           <tbody>
             <tr>
               <th scope="row">1</th>
-              <td><span class="badge badge-warning mr-2 blinking" id="amanCount"></span><strong>Aman</strong></td>
+              <td><span class="badge badge-warning mr-2 " id="amanCount"></span><strong>Aman</strong></td>
               <td id="aman_cont" class="contri"></td>
               <td id="aman_delta" class="delta"></td>
             </tr>
             <tr>
               <th scope="row">2</th>
-              <td><span class="badge badge-warning mr-2 blinking" id="anandCount"></span><strong>Anand</strong></td>
+              <td><span class="badge badge-warning mr-2 " id="anandCount"></span><strong>Anand</strong></td>
               <td id="anand_cont" class="contri"></td>
               <td id="anand_delta" class="delta"></td>
             </tr>
             <tr>
               <th scope="row">3</th>
-              <td><span class="badge badge-warning mr-2 blinking" id="anilCount"></span><strong>Anil</strong></td>
+              <td><span class="badge badge-warning mr-2 " id="anilCount"></span><strong>Anil</strong></td>
               <td id="anil_cont" class="contri"></td>
               <td id="anil_delta" class="delta"></td>
             </tr>
             <tr>
               <th scope="row">4</th>
-              <td><span class="badge badge-warning mr-2 blinking" id="prashantCount"></span><strong>Prashant</strong></td>
+              <td><span class="badge badge-warning mr-2 " id="prashantCount"></span><strong>Prashant</strong></td>
               <td id="prashant_cont" class="contri"></td>
               <td id="prashant_delta" class="delta"></td>
             </tr>
             <tr>
               <th scope="row">5</th>
-              <td><span class="badge badge-warning mr-2 blinking" id="rahulCount"></span><strong>Rahul</strong></td>
+              <td><span class="badge badge-warning mr-2 " id="rahulCount"></span><strong>Rahul</strong></td>
               <td id="rahul_cont" class="contri"></td>
               <td id="rahul_delta" class="delta"></td>
             </tr>
             <tr>
               <th scope="row">6</th>
-              <td><span class="badge badge-warning mr-2 blinking" id="sharadCount"></span><strong>Sharad</strong></td>
+              <td><span class="badge badge-warning mr-2 " id="sharadCount"></span><strong>Sharad</strong></td>
               <td id="sharad_cont" class="contri"></td>
               <td id="sharad_delta" class="delta"></td>
             </tr>
           </tbody>
         </table>
-        <span class="badge badge-warning" id="sum"></span>
+        <button class="alert alert-primary" id="sum"></button>
+        <button class="alert alert-secondary" id="deltasum"></button>
         <!-- Modal body end -->
       </div>
       <div class="modal-footer">

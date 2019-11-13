@@ -174,50 +174,10 @@
             }
         }
     </style>
-
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-        })
-        function setLabel(name) {
-            if (document.getElementById("details").style.display != 'none') {
-                document.getElementById("details").style.display = 'none'
-                document.getElementById("view_btn").innerText = 'View Details';
-            } else {
-
-            }
-            document.getElementById("collapseExample").style.display = "none";
-            document.getElementById("user-name").innerText = name;
-            document.getElementById("user").setAttribute('value', name);
-            document.getElementById("collapseExample").style.display = "block";
-            document.getElementById("user-name").style.width = "35%";
-            document.getElementById("user-name").style.textAlign = "center";
-            document.getElementById("collapseExample").style.width = "35%";
-            // document.getElementById("date").valueAsDate = new Date();
-        }
-        function showDetails() {
-            if (document.getElementById("details").style.display != 'block') {
-                document.getElementById("details").style.display = 'block';
-                document.getElementById("search").reset();
-                $("input[id$='fromDate'], input[id$='toDate']").datepicker("option", "maxDate", null);
-                $("input[id$='fromDate'], input[id$='toDate']").datepicker("option", "minDate", null);
-                document.getElementById("view_btn").innerText = 'Hide Details';
-                document.getElementById("collapseExample").style.display = 'none';
-                // document.getElementById("fromDate").valueAsDate = new Date();
-                // document.getElementById("toDate").valueAsDate = new Date();                
-            } else {
-                document.getElementById("details").style.display = 'none'
-                document.getElementById("view_btn").innerText = 'View Details';
-                document.getElementById("search_results").innerHTML = '';
-
-            }
-        }
-
-    </script>
+    <script type="text/javascript" src='{% static "js/main.js" %}'></script>
 
     {% block script %}
     {% endblock %}
-
 
 </head>
 
