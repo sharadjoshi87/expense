@@ -22,14 +22,12 @@ def entry(request):
     print(sorted_defaultusers)
     print(sorted_users)
 
-    diff = set(sorted_defaultusers) - set(sorted_users)
+    diff = sorted(set(sorted_defaultusers) - set(sorted_users))
     print(diff)
     print(type(diff))
 
     for i in diff:
         send[i] = i
-
-    print(send)
 
     return render(request, 'index.html', {'name':list(send.keys())[0]})
 
