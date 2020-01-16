@@ -234,15 +234,16 @@
             <img src="{% static 'sharad.jpg' %}" alt="sharad" width="195" height="195" class="rounded-circle"
                 onclick="setLabel('Sharad Joshi')" data-toggle="tooltip" data-placement="bottom" title="Sharad Joshi">
         </a>
+        <a class="btn btn-simple" role="button" aria-expanded="false">
+            {% load static %}
+            <img src="{% static 'shobhit.jpg' %}" alt="shobhit" width="195" height="195" class="rounded-circle"
+                onclick="setLabel('Shobhit Sharma')" data-toggle="tooltip" data-placement="bottom" title="Shobhit Sharma">
+        </a>
     </p>
-
-
 
     {% block container %}
 
     {% endblock %}
-
-
 
 
 </body>

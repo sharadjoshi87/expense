@@ -58,6 +58,13 @@
             <td><li style="list-style-type:none;" value='{{q.amount}}'  type=text class="anand">&#x20B9; {{q.amount}}</li></td>
             <td>{{q.date_deposite}}</td>
         </tr>
+        {% elif q.user_name == 'Shobhit Sharma' %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td><strong>{{q.user_name}}</strong></td>
+            <td><li style="list-style-type:none;" value='{{q.amount}}'  type=text class="shobhit">&#x20B9; {{q.amount}}</li></td>
+            <td>{{q.date_deposite}}</td>
+        </tr>
         {% else %}
         {% endif %}
         {% endfor %}

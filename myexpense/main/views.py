@@ -9,7 +9,7 @@ def index(request):
 
 def entry(request):
     defaultUsers = {'Anand Chauhan': 'Anand Chauhan', 'Aman Johri': 'Aman Johri', 'Anil Kumar Sahu': 'Anil Kumar Sahu', 'Prashant Jain': 'Prashant Jain',
-                    'Rahul Chakraborty': 'Rahul Chakraborty', 'Sharad Joshi': 'Sharad Joshi'}
+                    'Rahul Chakraborty': 'Rahul Chakraborty', 'Sharad Joshi': 'Sharad Joshi', 'Shobhit Sharma': 'Shobhit Sharma'}
     users = {}
     send = {}
     last_five = Detail.objects.all().order_by('-date_deposite')[:5]
