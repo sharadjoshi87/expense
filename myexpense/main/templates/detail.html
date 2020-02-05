@@ -13,40 +13,81 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Expensive to expenses!</title>
+    <script type="text/javascript" src='{% static "js/details.js" %}'></script>
   </head>
-  <body>
+  <body onload="checkEvent()">
       <div class="container my-5">
           <div class="container my-5 mx-5 px-5 py5">
-    <div class="jumbotron btn-outline-info">
+    <div class="jumbotron">
         <table class="table">
-            <caption>List of users</caption>
+            <caption>List of Events</caption>
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Birthday</th>
+                <th scope="col">Job Anniversary</th>
+                <th scope="col">Marriage Anniversary</th>
+                <th scope="col">Kids Birthday</th>
+                <th scope="col">New Asset</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row">Aman</th>
+                <td class="eventDate">2020-05-23&nbsp;<i class="fa fa-unlock" aria-hidden="false" style="color:green"></i></td>
+                <td>2020-05-23</td>
+                <td>2020-05-23</td>
+                <td>2020-05-23</td>
+                <td>2020-05-23</td>
               </tr>
               <tr>
-                <th scope="row">2</th>
+                <th scope="row">Anand</th>
                 <td>Jacob</td>
                 <td>Thornton</td>
                 <td>@fat</td>
+                <td>@fat</td>
+                <td>@fat</td>
               </tr>
               <tr>
-                <th scope="row">3</th>
+                <th scope="row">Anil</th>
                 <td>Larry</td>
                 <td>the Bird</td>
+                <td>@twitter</td>
+                <td>@twitter</td>
+                <td>@twitter</td>
+              </tr>
+              <tr>
+                <th scope="row">Prashant</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td>@twitter</td>
+                <td>@twitter</td>
+              </tr>
+              <tr>
+                <th scope="row">Rahul</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td>@twitter</td>
+                <td>@twitter</td>
+              </tr>
+              <tr>
+                <th scope="row">Ravikant</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td>@twitter</td>
+                <td>@twitter</td>
+              </tr>
+              <tr>
+                <th scope="row">Sharad</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td>@twitter</td>
                 <td>@twitter</td>
               </tr>
             </tbody>
