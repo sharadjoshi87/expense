@@ -67,3 +67,6 @@ def saveToDB(query):
 
 def is_valid_queryparam(param):
     return param != '' and param is not None
+
+def detail(request):
+    return render(request, 'detail.html')
