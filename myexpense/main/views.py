@@ -12,9 +12,9 @@ def entry(request):
                     'Rahul Chakraborty': 'Rahul Chakraborty', 'Sharad Joshi': 'Sharad Joshi', 'Shobhit Sharma': 'Shobhit Sharma'}
     users = {}
     send = {}
-    last_five = Detail.objects.all().order_by('-date_deposite')[:5]
-    print(type(last_five))
-    for ls in last_five:
+    last_six = Detail.objects.all().order_by('-date_deposite')[:6]
+    print(type(last_six))
+    for ls in last_six:
         users[ls.user_name] = ls.user_name
 
     sorted_users = sorted(users.values())
