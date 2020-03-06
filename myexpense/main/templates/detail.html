@@ -30,7 +30,7 @@
   <div class="container my-5">
     <div class="container my-5 mx-5 px-5 py5">
       <div class="jumbotron">
-        <table class="table">
+        <table class="table" id="events">
           <caption>List of Events :Anil - As per discussion</caption>
           <thead>
             <tr>
@@ -45,10 +45,8 @@
           <tbody>
             <tr>
               <th scope="row">Aman</th>
-              <td class="eventDate">2020-04-30&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="true"
-                  style="color:green;display:none;"></i></td>
-              <td class="eventDate">2020-11-07&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i></td>
+              <td class="eventDate" id="amBirth"></td>
+              <td class="eventDate" id="amJob"></td>
               <td class="eventDate">N.A.&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
                   style="color:green;display:none;"></i></td>
               <td class="eventDate">N.A.&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
@@ -58,38 +56,27 @@
             </tr>
             <tr>
               <th scope="row">Anand</th>
-              <td class="eventDate">2020-07-11&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="true"
-                  style="color:green;display:none;"></i></td>
-              <td class="eventDate">2020-05-17&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i></td>
-              <td class="eventDate">2020-11-19&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i></td>
-              <td class="eventDate">2020-11-27&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i></td>
+              <td class="eventDate" id="anBirth"></td>
+              <td class="eventDate" id="anJob"></td>
+              <td class="eventDate" id="anMar"></td>
+              <td class="eventDate" id="anKid"></td>
               <td class="eventDate">N.A.&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
                   style="color:green;display:none;"></i></td>
             </tr>
             <tr>
               <th scope="row">Anil</th>
-              <td class="eventDate">2020-10-01&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="true"
-                  style="color:green;display:none;"></i></td>
-              <td class="eventDate">2020-01-11&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i></td>
-              <td class="eventDate">2020-07-08&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i></td>
-              <td class="eventDate">2020-06-15&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i></td>
+              <td class="eventDate" id="aniBirth"></td>
+              <td class="eventDate" id="aniJob"></td>
+              <td class="eventDate" id="aniMar"></td>
+              <td class="eventDate" id="aniKid"></td>
               <td class="eventDate">N.A.&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
                   style="color:green;display:none;"></i></td>
             </tr>
             <tr>
               <th scope="row">Prashant</th>
-              <td class="eventDate">2020-10-30&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="true"
-                  style="color:green;display:none;"></i></td>
-              <td class="eventDate">2020-12-14&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i></td>
-              <td class="eventDate">2020-06-22&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i></td>
+              <td class="eventDate" id="prBirth"></td>
+              <td class="eventDate" id="prJob"></td>
+              <td class="eventDate" id="prMar"></td>
               <td class="eventDate">N.A.&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
                   style="color:green;display:none;"></i></td>
               <td class="eventDate">N.A.&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
@@ -97,12 +84,9 @@
             </tr>
             <tr>
               <th scope="row">Rahul</th>
-              <td class="eventDate">2020-12-09&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="true"
-                  style="color:green;display:none;"></i></td>
-              <td class="eventDate">2020-02-11&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i><i class="fa fa-credit-card" aria-hidden="true"></i></td>
-              <td class="eventDate">2020-01-27&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i></td>
+              <td class="eventDate" id="rhBirth"></td>
+              <td class="eventDate" id="rhJob"></i></td>
+              <td class="eventDate" id="rhMar"></td>
               <td class="eventDate">N.A.&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
                   style="color:green;display:none;"></i></td>
               <td class="eventDate">N.A.&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
@@ -110,27 +94,19 @@
             </tr>
             <tr>
               <th scope="row">Ravikant</th>
-              <td class="eventDate">2020-01-01&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="true"
-                  style="color:green;display:none;"></i></td>
-              <td class="eventDate">2020-04-14&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i></td>
-              <td class="eventDate">2020-11-24&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i></td>
-              <td class="eventDate">2020-11-22&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i></td>
+              <td class="eventDate" id="rvBirth"></td>
+              <td class="eventDate" id="rvJob"></td>
+              <td class="eventDate" id="rvMar"></td>
+              <td class="eventDate" id="rvKid"></td>
               <td class="eventDate">N.A.&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
                   style="color:green;display:none;"></i></td>
             </tr>
             <tr>
               <th scope="row">Sharad</th>
-              <td class="eventDate">2020-10-14&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="true"
-                  style="color:green;display:none;"></i></td>
-              <td class="eventDate">2020-12-01&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i></td>
-              <td class="eventDate">2020-04-16&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i></td>
-              <td class="eventDate">2020-04-15&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
-                  style="color:green;display:none;"></i></td>
+              <td class="eventDate" id="shBirth"></td>
+              <td class="eventDate" id="shJob"></td>
+              <td class="eventDate" id="shMar"></td>
+              <td class="eventDate" id="shKid"></td>
               <td class="eventDate">N.A.&nbsp;<i id="unlock" class="fa fa-bookmark" aria-hidden="false"
                   style="color:green;display:none;"></i></td>
             </tr>
@@ -139,6 +115,7 @@
       </div>
     </div>
   </div>
+  <!-- <i class="fa fa-credit-card" aria-hidden="true"></i> -->
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <!-- <i class="fa fa-credit-card" aria-hidden="true"></i> -->
